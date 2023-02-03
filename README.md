@@ -224,8 +224,4 @@
 
 <br>
 
-
-
- <details>
-
  </details>
