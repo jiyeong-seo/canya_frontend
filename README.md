@@ -227,37 +227,5 @@
 ## 🚀 트러블 슈팅
 
  <details>
- <summary>트러블 슈팅</summary>
- <div markdown="1">       
 
-  <br>
-  
- 트러블슈팅 내용
-
- 
- </div>
- </details>
- 
- <details>
-  <summary>트러블 슈팅</summary>
- <div markdown="1">       
-
-  <br>
-  
- 트러블슈팅 내용
-  
- 
- </div>
- </details>
- 
-  <details>
-  <summary>트러블 슈팅</summary>
- <div markdown="1">       
-
-  <br>
-  
- 트러블슈팅 내용
-
- 
- </div>
  </details>
