@@ -8,6 +8,7 @@ import {
 } from "../../container/globalException";
 import { useInView } from "react-intersection-observer";
 import { Outlet } from "react-router-dom";
+import { Default, Mobile } from "../../assets/mediaQuery";
 
 const MainLayout = () => {
 	// 검색 값 state
@@ -36,27 +37,35 @@ const MainLayout = () => {
 	if (status === "error")
 		return (
 			<>
-				<MainNav
-					setResetMain={setResetMain}
-					setSubmitValues={setSubmitValues}
-				/>
-				<ErrorExceptionHandler />
-				<MainFooter />
+				<Default>
+					<MainNav
+						setResetMain={setResetMain}
+						setSubmitValues={setSubmitValues}
+					/>
+					<ErrorExceptionHandler />
+					<MainFooter />
+				</Default>
 			</>
 		);
 
 	return (
 		<>
-			<MainNav setResetMain={setResetMain} setSubmitValues={setSubmitValues} />
-			<Margin margin="78px 0 0 0">
-				{status === "loading" && !resetMain ? <ExceptionHandler /> : ""}
-				{data && !resetMain ? (
-					<MainSearchList data={data} setResetMain={setResetMain} />
-				) : (
-					<Outlet></Outlet>
-				)}
-				<MainFooter />
-			</Margin>
+			<Default>
+				<MainNav
+					setResetMain={setResetMain}
+					setSubmitValues={setSubmitValues}
+				/>
+				<Margin margin="78px 0 0 0">
+					{status === "loading" && !resetMain ? <ExceptionHandler /> : ""}
+					{data && !resetMain ? (
+						<MainSearchList data={data} setResetMain={setResetMain} />
+					) : (
+						<Outlet></Outlet>
+					)}
+					<MainFooter />
+				</Margin>
+			</Default>
+			<Mobile>ff</Mobile>
 		</>
 	);
 };

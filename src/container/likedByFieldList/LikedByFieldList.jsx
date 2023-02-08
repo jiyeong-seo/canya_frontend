@@ -320,9 +320,7 @@ const LikedByFieldList = () => {
 						})}
 					</Flex>
 				</Margin>
-				<Box>
-					{isFetchingNextPage ? <Box>Loading...</Box> : <Box ref={ref} />}
-				</Box>
+				<Box>{isFetchingNextPage ? <Box></Box> : <Box ref={ref} />}</Box>
 			</Box>
 		</Margin>
 	);

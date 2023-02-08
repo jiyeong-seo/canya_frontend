@@ -10,6 +10,8 @@ import {
 	ErrorExceptionHandler,
 	ExceptionHandler,
 } from "../../container/globalException";
+import { Default, Mobile } from "../../assets/mediaQuery";
+import Pick from "../../container/main/pick";
 
 const MainList = () => {
 	// 전체 게시글 요청 hook
@@ -29,14 +31,19 @@ const MainList = () => {
 		<>
 			{mainPosts && (
 				<>
-					<MainCanyaPick
-						picks={canyaPick}
-						setCanyaPick={setCanyaPick}
-						mainPosts={mainPosts}
-					/>
-					<MainBestList bestDto={mainPosts.bestDto} />
-					<MainNewList newDto={mainPosts.newDto} />
-					<MainAllList allDto={mainPosts.allDto} />
+					<Default>
+						<MainCanyaPick
+							picks={canyaPick}
+							setCanyaPick={setCanyaPick}
+							mainPosts={mainPosts}
+						/>
+						<MainBestList bestDto={mainPosts.bestDto} />
+						<MainNewList newDto={mainPosts.newDto} />
+						<MainAllList allDto={mainPosts.allDto} />
+					</Default>
+					<Mobile>
+						<Pick />
+					</Mobile>
 				</>
 			)}
 		</>
